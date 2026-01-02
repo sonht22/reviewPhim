@@ -1,16 +1,25 @@
 import sys
 from PyQt6.QtWidgets import QApplication
-from ui.main_window import MainWindow 
+from PyQt6.QtGui import QFont  # <--- THÊM DÒNG NÀY
+
+# Import giao diện chính
+from ui.main_window import MainWindow
 
 def main():
-    # 1. Khởi tạo ứng dụng
     app = QApplication(sys.argv)
-    
-    # 2. Khởi tạo cửa sổ chính
+
+    # === [FIX LỖI FONT SIZE -1] ===
+    # Thiết lập font mặc định cho toàn bộ ứng dụng ngay từ đầu
+    # Bạn có thể đổi "Segoe UI" thành "Arial" hoặc "Roboto" tùy thích
+    default_font = QFont("Segoe UI", 10) 
+    app.setFont(default_font)
+    # ==============================
+
+    # Khởi tạo cửa sổ chính
     window = MainWindow()
     window.show()
-    
-    # 3. Chạy vòng lặp sự kiện (giữ app luôn chạy)
+
+    # Chạy vòng lặp sự kiện
     sys.exit(app.exec())
 
 if __name__ == "__main__":

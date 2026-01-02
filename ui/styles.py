@@ -7,7 +7,12 @@ QMainWindow {
 QWidget {
     color: #e0e0e0;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 14px;
+    /* XÓA DÒNG font-size: 14px; ĐI */
+}
+
+/* Nếu muốn set font riêng cho nút hoặc nhãn thì set cụ thể như này sẽ không lỗi */
+QPushButton, QLabel, QTextEdit {
+    font-size: 14px; 
 }
 QFrame.panel {
     background-color: #252526;
